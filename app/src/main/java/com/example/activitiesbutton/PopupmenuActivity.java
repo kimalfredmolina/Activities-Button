@@ -17,21 +17,20 @@ public class PopupmenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.popupmenu);
 
-        // Find the ImageView by its ID
         imgMore = findViewById(R.id.imgMore);
 
-        // Set an onClickListener to show the PopupMenu
+        
         imgMore.setOnClickListener(v -> showPopupMenu(v));
     }
 
     private void showPopupMenu(View view) {
-        // Create a PopupMenu anchored to the ImageView
+       
         PopupMenu popupMenu = new PopupMenu(PopupmenuActivity.this, view);
 
-        // Inflate the menu resource
+        
         popupMenu.inflate(R.menu.menu_popup);
 
-        // Set the menu item click listener
+        
         popupMenu.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.items1) {
                 Toast.makeText(this, "Menu 1", Toast.LENGTH_SHORT).show();
@@ -48,7 +47,7 @@ public class PopupmenuActivity extends AppCompatActivity {
             return false;
         });
 
-        // Show the PopupMenu
+        
         popupMenu.show();
     }
 }
