@@ -1,14 +1,12 @@
 package com.example.activitiesbutton;
 
+import android.view.View;
+
 import android.os.Bundle;
 import android.widget.ImageView;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 import androidx.appcompat.widget.PopupMenu;
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-
 
 public class PopupmenuActivity extends AppCompatActivity {
 
@@ -17,38 +15,40 @@ public class PopupmenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.popupmenu);
 
-        imgMore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showPopupMenu(v);
-            }
-        });
+        // Find the ImageView by its ID
+        imgMore = findViewById(R.id.imgMore);
+
+        // Set an onClickListener to show the PopupMenu
+        imgMore.setOnClickListener(v -> showPopupMenu(v));
     }
-    private void showPopupMenu(View view){
-        PopupMenu popupMenu =new PopupMenu(this, view);
+
+    private void showPopupMenu(View view) {
+        // Create a PopupMenu anchored to the ImageView
+        PopupMenu popupMenu = new PopupMenu(PopupmenuActivity.this, view);
+
+        // Inflate the menu resource
         popupMenu.inflate(R.menu.menu_popup);
 
-        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                if (item.getItemId() == R.id.items1) {
-                    Toast.makeText(PopupmenuActivity.this, "Menu 1", Toast.LENGTH_SHORT).show();
-                } else if (item.getItemId() == R.id.items2) {
-                    Toast.makeText(PopupmenuActivity.this, "Menu 2", Toast.LENGTH_SHORT).show();
-                } else if (item.getItemId() == R.id.items3) {
-                    Toast.makeText(PopupmenuActivity.this, "Menu 3", Toast.LENGTH_SHORT).show();
-                } else {
-
-                    // Handle the case where no matching item ID is found (optional)
-                }
+        // Set the menu item click listener
+        popupMenu.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.items1) {
+                Toast.makeText(this, "Menu 1", Toast.LENGTH_SHORT).show();
                 return true;
             }
+            if (item.getItemId() == R.id.items2) {
+                Toast.makeText(this, "Menu 2", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+            if (item.getItemId() == R.id.items3) {
+                Toast.makeText(this, "Menu 3", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+            return false;
         });
+
+        // Show the PopupMenu
         popupMenu.show();
-
-
     }
 }
