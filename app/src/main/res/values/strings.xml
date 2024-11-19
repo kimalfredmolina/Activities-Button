@@ -1,4 +1,10 @@
 <resources>
+    <string name="app_name">Activities Button</string>
+    <string name="pop_up_menu">Pop Up Menu</string>
+    <string name="menu_1">Menu 1</string>
+    <string name="menu_2">Menu 2</string>
+    <string name="menu_3">Menu 3</string>
+    <string name="more">Menu</string>
     <string name="app_name">DatePickerApp</string>
     <string name="button_text">Pick Date</string>
     <string name="selected_date_label">Selected Date: None</string>
