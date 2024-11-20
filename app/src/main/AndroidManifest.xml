@@ -12,6 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ActivitiesButton"
         tools:targetApi="31">
+
+        <!-- MainActivity -->
+        <activity
+            android:name=".PopupmenuActivity"
+            android:exported="false" />
+
+        <!-- PopupmenuActivity -->
+        <activity
+            android:name=".MainPickers"
+            android:exported="false" />
+        <activity
+            android:name=".ContextualMenu"
+            android:exported="false" />
         <activity
             android:name=".AppBarCM"
             android:exported="false" />
@@ -20,10 +33,10 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
