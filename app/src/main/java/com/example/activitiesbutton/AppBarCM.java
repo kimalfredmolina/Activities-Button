@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class AppBarCM extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
