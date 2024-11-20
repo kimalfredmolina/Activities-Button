@@ -16,9 +16,6 @@
             android:name=".MainAct"
             android:exported="false" />
         <activity
-            android:name=".MainAct"
-            android:exported="false" />
-        <activity
             android:name=".ContextualMenu"
             android:exported="true">
             <intent-filter>
