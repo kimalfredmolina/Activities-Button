@@ -1,48 +1,59 @@
 package com.example.activitiesbutton;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.ActionMode;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-
-
-import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class ContextualMenu extends AppCompatActivity {
-    Button button;
-    ActionMode actionMode;
+
+    private Button buttonFloatingMenu, buttonActionMode;
+    private ActionMode mode = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_contextual_menu);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        buttonFloatingMenu = findViewById(R.id.buttonFloatingMenu);
+        buttonActionMode = findViewById(R.id.buttonActionMode);
 
-        button = findViewById(R.id.btn);
-        button.setOnLongClickListener(v -> {
-            if (actionMode != null) {
-                return false;
+        // Register the floating context menu for the first button
+        registerForContextMenu(buttonFloatingMenu);
+
+        // Set up long click listener for the second button to trigger ActionMode
+        buttonActionMode.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                if (mode != null) return false; // If already in ActionMode, do nothing
+                mode = startActionMode(actionModeCallback);
+                return true;
             }
-            actionMode = startActionMode(callback);
-            return true;
         });
     }
 
-    private final ActionMode.Callback callback = new ActionMode.Callback() {
+    // Floating Context Menu
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        getMenuInflater().inflate(R.menu.c_menu, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        Toast.makeText(this, "Floating Menu: " + item.getTitle(), Toast.LENGTH_SHORT).show();
+        return super.onContextItemSelected(item);
+    }
+
+    // Contextual Action Mode
+    private final ActionMode.Callback actionModeCallback = new ActionMode.Callback() {
         @Override
         public boolean onCreateActionMode(ActionMode mode, Menu menu) {
             getMenuInflater().inflate(R.menu.c_menu, menu);
@@ -52,29 +63,29 @@ public class ContextualMenu extends AppCompatActivity {
 
         @Override
         public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-            return false;
+            return true;
         }
 
-        @SuppressLint("NonConstantResourceId")
         @Override
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
             switch (item.getItemId()) {
-                case 1: // Replace R.id.menu_item_1
-                    Toast.makeText(ContextualMenu.this, "Liked", Toast.LENGTH_SHORT).show();
-                    mode.finish();
+                case R.id.Heart:
+                    Toast.makeText(ContextualMenu.this, "Action Mode: Liked", Toast.LENGTH_SHORT).show();
+                    mode.finish(); // Exit action mode
                     return true;
-                case 2: // Replace R.id.menu_item_2
-                    Toast.makeText(ContextualMenu.this, "Shared", Toast.LENGTH_SHORT).show();
-                    mode.finish();
+                case R.id.Shared:
+                    Toast.makeText(ContextualMenu.this, "Action Mode: Shared", Toast.LENGTH_SHORT).show();
+                    mode.finish(); // Exit action mode
                     return true;
                 default:
-                    return false; // Return false for unhandled cases
+                    return false;
             }
         }
 
         @Override
         public void onDestroyActionMode(ActionMode mode) {
-            actionMode = null;
+            ContextualMenu.this.mode = null; // Clear ActionMode reference
         }
     };
+
 }

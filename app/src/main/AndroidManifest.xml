@@ -23,9 +23,10 @@
             android:name=".MainPickers"
             android:exported="false" />
         <activity
-            android:name=".ContextualMenu"
+            android:name=".MainAct"
             android:exported="false" />
         <activity
+            android:name=".ContextualMenu"
             android:name=".AppBarCM"
             android:exported="false" />
         <activity
