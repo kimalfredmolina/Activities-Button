@@ -6,6 +6,10 @@
     <string name="title">GOOD JOB!</string>
     <string name="mini">You clicked the Button</string>
     <string name="ok">OK</string>
-
+    <string name="app_bar">Appbar with Context Menu</string>
+    <string name="con_menu">Contextual Menu</string>
+    <string name="popup_menu">Popup Menu</string>
+    <string name="dialogs">Dialogs</string>
+    <string name="pickers">Pickers</string>
 
 </resources>
