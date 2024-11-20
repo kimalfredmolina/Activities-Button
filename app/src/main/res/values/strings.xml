@@ -3,4 +3,9 @@
     <string name="button_text">Pick Date</string>
     <string name="selected_date_label">Selected Date: None</string>
     <string name="selected_date">Selected Date: %1$s</string>
+    <string name="title">GOOD JOB!</string>
+    <string name="mini">You clicked the Button</string>
+    <string name="ok">OK</string>
+    <string name="ok">OK</string>
+
 </resources>
