@@ -13,7 +13,7 @@ public class MainDialogs {
     public static void showCustomDialog(Context context) {
         // Inflate the custom layout
         LayoutInflater inflater = LayoutInflater.from(context);
-        View dialogView = inflater.inflate(R.layout.activity_main, null);
+        View dialogView = inflater.inflate(R.layout.activity_dialogs, null);
 
         // Initialize dialog components
         TextView title = dialogView.findViewById(R.id.good_job);
