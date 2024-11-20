@@ -4,19 +4,28 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <Button
-        android:id="@+id/buttonFloatingMenu"
+    <!-- Horizontal container for the buttons -->
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Floating Menu"
-        android:layout_marginBottom="16dp"
-        android:layout_centerHorizontal="true" />
+        android:orientation="horizontal"
+        android:layout_centerInParent="true">
 
-    <Button
-        android:id="@+id/buttonActionMode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Action Mode"
-        android:layout_below="@id/buttonFloatingMenu"
-        android:layout_centerHorizontal="true" />
+        <!-- Floating Menu Button -->
+        <Button
+            android:id="@+id/buttonFloatingMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Floating Menu"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Action Mode Button -->
+        <Button
+            android:id="@+id/buttonActionMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Action Mode"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
 </RelativeLayout>
