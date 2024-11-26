@@ -17,7 +17,15 @@
     <string name="menu_2">Menu 2</string>
     <string name="menu_3">Menu 3</string>
     <string name="more">Menu</string>
-    <string name="app_name">DatePickerApp</string>
+    <string name="title">GOOD JOB!</string>
+    <string name="mini">You clicked the Button</string>
+    <string name="ok">OK</string>
+    <string name="oks">OK na</string>
+    <string name="app_bar">Appbar with Context Menu</string>
+    <string name="con_menu">Contextual Menu</string>
+    <string name="popup_menu">Popup Menu</string>
+    <string name="dialogs">Dialogs</string>
+    <string name="pickers">Pickers</string>
     <string name="button_text">Pick Date</string>
     <string name="selected_date_label">Selected Date: None</string>
     <string name="selected_date">Selected Date: %1$s</string>
