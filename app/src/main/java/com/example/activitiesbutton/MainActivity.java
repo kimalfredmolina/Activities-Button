@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         Button popup = findViewById(R.id.popup);
         Button dialogs = findViewById(R.id.dialogs);
         Button pickers = findViewById(R.id.pickers);
+        Button tabs = findViewById(R.id.tabfragments);
 
         appbar.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, AppBarCM.class);
@@ -42,8 +43,11 @@ public class MainActivity extends AppCompatActivity {
         pickers.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, MainPickers.class);
             startActivity(intent);
+        });
 
-
+        tabs.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, TabFragment.class);
+            startActivity(intent);
         });
     }
 }

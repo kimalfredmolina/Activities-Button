@@ -61,6 +61,16 @@
         app:cornerRadius ="10dp"
         android:textColor="@color/white"
         />
+    <Button
+        android:id="@+id/tabfragments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/tabfrags"
+        android:backgroundTint="@color/green"
+        app:cornerRadius ="10dp"
+        android:textColor="@color/white"
+        />
 
 
 </LinearLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TCUArticle">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:src="@drawable/img_1" />
+    <TextView
+        android:id="@+id/arti1"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:layout_toEndOf="@+id/imageView"
+        android:text="@string/tcuarticle"
+        />
+    <TextView
+        android:id="@+id/arti2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/arti1"
+        android:text="@string/tcuarticle2"
+        />
+    <TextView
+        android:id="@+id/arti3"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/arti2"
+        android:text="@string/tcuarticle3"
+        />
+    <TextView
+        android:id="@+id/arti4"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/arti3"
+        android:text="@string/tcuarticle4"
+        />
+    <TextView
+        android:id="@+id/arti5"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/arti4"
+        android:text="@string/tcuarticle5"
+        />
+    <TextView
+        android:id="@+id/arti6"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/arti5"
+        android:text="@string/tcuarticle6"
+        />
+
+</RelativeLayout>
